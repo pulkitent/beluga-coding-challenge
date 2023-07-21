@@ -15,6 +15,11 @@ This service purpose is to do manipulations on string
    --header 'Content-Type: application/json' \
    --data '{"input": "Beluga"}''`
 
+### API documentation (Swagger)
+
+1. Start the service using above steps
+2. Open http://localhost:8080/swagger-ui/index.html in your browser
+
 ### IntelliJ Setup
 
 1. Add lombok plugin (Preferences > Plugins > Search for Lombok)
@@ -50,6 +55,7 @@ discuss & open to take as a feedback
 * I have added ci-cd.yml to set up CI CD pipeline in GitHub flow.
 * I have tried to implement notification pattern as suggested by Martin Fowler by not throwing
   exceptions [ref-link](https://martinfowler.com/articles/replaceThrowWithNotification.html)
+* I have tried to integrate Swagger documentation using springdoc openapi
 
 ## Things I could have covered if given more time (or more complex business logic)
 
@@ -57,4 +63,3 @@ discuss & open to take as a feedback
   domain models
 * I could have asserted response body in my integrations tests using Cucumber BDD
 * I could have published docker image created to my personal Docker hub account in GitHub actions (CI CD pipeline)
-* I could have added Swagger documentation as part of Open API specification
