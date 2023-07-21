@@ -32,4 +32,23 @@ class StringControllerTest {
     Assertions.assertEquals("", response.getBody().getErrorMessage());
     Assertions.assertEquals(200, response.getStatusCode().value());
   }
+
+  @Test
+  void testReverse_ShouldReturnHTTP400WhenInputInRequestIsNull() {
+    // Given
+    String input = null;
+    StringReverseRequest stringReverseRequest = new StringReverseRequest();
+    stringReverseRequest.setInput(input);
+
+    // When
+    ResponseEntity<StringReverseResponse<String>> response = stringController.reverse(stringReverseRequest);
+
+    // Then
+    Assertions.assertNotNull(response);
+    Assertions.assertNotNull(response.getBody());
+    Assertions.assertNull(response.getBody().getData());
+    Assertions.assertFalse(response.getBody().getIsSuccess());
+    Assertions.assertEquals("Request body is incorrect", response.getBody().getErrorMessage());
+    Assertions.assertEquals(400, response.getStatusCode().value());
+  }
 }
