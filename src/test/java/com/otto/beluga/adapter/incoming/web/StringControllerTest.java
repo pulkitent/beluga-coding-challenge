@@ -2,17 +2,23 @@ package com.otto.beluga.adapter.incoming.web;
 
 import com.otto.beluga.adapter.incoming.web.request.StringReverseRequest;
 import com.otto.beluga.adapter.incoming.web.response.StringReverseResponse;
+import com.otto.beluga.port.incoming.IStringReverseUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 
+import static org.mockito.Mockito.when;
+
 @SpringBootTest
 class StringControllerTest {
-
   @InjectMocks
   private StringController stringController;
+
+  @Mock
+  private IStringReverseUseCase stringReverseUseCase;
 
   @Test
   void testReverse_ShouldReturnHTTP200WhenInputInRequestIsNotNullAndIsValid() {
@@ -20,6 +26,7 @@ class StringControllerTest {
     String input = "Pulkit";
     StringReverseRequest stringReverseRequest = new StringReverseRequest();
     stringReverseRequest.setInput(input);
+    when(stringReverseUseCase.reverse(input)).thenReturn("tikluP");
 
     // When
     ResponseEntity<StringReverseResponse<String>> response = stringController.reverse(stringReverseRequest);
