@@ -31,6 +31,12 @@ This service purpose is to do manipulations on string
 7. Run `./gradlew clean bootRun` to start service
 8. Run `./gradlew clean bootJar` to create fat JAR
 
+## Thought process
+
+As a supporter of evolutionary design which gets improved iteration by iteration on getting more clear requirements. I
+have tried to implement this project in the same way. However, there could be different opinions which I am happy to
+discuss & open to take as a feedback
+
 ## Things I have tried to cover
 
 * I have tried to implement clean architecture having ports, adapters & use-cases (Although business logic was simple,
