@@ -30,3 +30,25 @@ This service purpose is to do manipulations on string
 6. Run `./gradlew clean build` to build the service
 7. Run `./gradlew clean bootRun` to start service
 8. Run `./gradlew clean bootJar` to create fat JAR
+
+## Things I have tried to cover
+
+* I have tried to implement clean architecture having ports, adapters & use-cases (Although business logic was simple,
+  hence one suggest to not go for this architecture in this case).
+* I have tried to accommodate SOLID principles & 4 rules of simple design.
+* I have tried to make logical & small commits.
+* I have tried to Dockerized the application.
+* I have tried to add independent unit tests in **"Given When Then"** format with 87% line coverage & with mocking
+  wherever required & possible with its test report using JACOCO.
+* I have tried to add SITs (Service Isolation Tests or Integration tests) in BBD format using Cucumber with test report
+* I have added ci-cd.yml to set up CI CD pipeline in GitHub flow.
+* I have tried to implement notification pattern as suggested by Martin Fowler by not throwing
+  exceptions [ref-link](https://martinfowler.com/articles/replaceThrowWithNotification.html)
+
+## Things I could have covered if given more time (or more complex business logic)
+
+* As a supporter of DDD I could have also added domain models in case of complex business logic as I prefer fat
+  domain models
+* I could have asserted response body in my integrations tests using Cucumber BDD
+* I could have published docker image created to my personal Docker hub account in GitHub actions (CI CD pipeline)
+* I could have added Swagger documentation as part of Open API specification
