@@ -23,7 +23,7 @@ jobs:
         run: ./gradlew build
 
   test:
-    name: Run unit tests with coverage
+    name: Run unit & integration tests
     runs-on: ubuntu-latest
 
     steps:
