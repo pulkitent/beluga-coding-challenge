@@ -26,6 +26,7 @@ This service purpose is to do manipulations on string
 2. Install Java 17
 3. Install Gradle 8 (or any other version a gradle wrapper will take care)
 4. Run `./gradlew clean test` to run the unit tests
-5. Run `./gradlew clean build` to build the service
-6. Run `./gradlew clean bootRun` to start service
-7. Run `./gradlew clean bootJar` to create fat JAR
+5. Run `./gradlew clean cucumberCli` to run the integration tests (Cucumber feature tests)
+6. Run `./gradlew clean build` to build the service
+7. Run `./gradlew clean bootRun` to start service
+8. Run `./gradlew clean bootJar` to create fat JAR
