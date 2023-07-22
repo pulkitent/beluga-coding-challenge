@@ -11,9 +11,11 @@ This service purpose is to do manipulations on string
 1. Run `docker build --tag=string-service:latest .` to build Docker image
 2. Run `docker run -p 8080:8080 string-service:latest` to run the service
 3. Example CURL to reverse a given
-   string `curl --location 'curl --location 'http://localhost:8080/apis/v1/strings/reverse' \
+   string `curl --location 'http://localhost:8080/apis/v1/strings/reverse' \
    --header 'Content-Type: application/json' \
-   --data '{"input": "Beluga"}''`
+   --data '{
+   "input": "Beluga"
+   }'`
 
 ### API documentation (Swagger)
 
