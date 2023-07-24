@@ -51,3 +51,20 @@ jobs:
 
       - name: Build Docker image
         run: docker build --tag=string-service:latest .
+
+  Deploy:
+    steps:
+      - name: Authenticate to Google Cloud
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/133370309179/locations/global/workloadIdentityPools/beluga-wif-pool/providers/beluga-wif-provider'
+          service_account: 'beluga-terraform-challenge-del@gcp-it-ls-beluga-drddev-yy.iam.gserviceaccount.com'
+          token_format: 'access_token'
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Run Terraform
+        run: |
+          cd terraform
+          terraform init
+          terraform plan -no-color
+          terraform apply
