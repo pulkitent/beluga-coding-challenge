@@ -74,6 +74,6 @@ jobs:
       - name: Run Terraform
         run: |
           cd terraform
-          terraform init
+          terraform init 
           terraform plan -no-color
-          terraform apply
+          terraform apply -auto-approve
