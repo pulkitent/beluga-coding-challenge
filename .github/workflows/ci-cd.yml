@@ -52,7 +52,9 @@ jobs:
       - name: Build Docker image
         run: docker build --tag=string-service:latest .
 
-  Deploy:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
     steps:
       - name: Authenticate to Google Cloud
         uses: 'google-github-actions/auth@v1'
